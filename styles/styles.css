@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
+:root {
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    --color-green: rgb(100, 255, 218);
+    --color-blue: #0A192F;
+    --color-plate: #ccd6f6;
+    --color-light-slate: #ccd6f6;
+    --color-slate: #8892b0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-blue);
+    font-size: 67.5%;
+    font-family: 'Fira Mono', monospace;
+    counter-reset: item;
+}
+
+header {
+    display:  flex;
+    justify-content: space-between;
+    margin: 30px 50px 0 50px;   
+}
+
+nav ul {
+    display: flex;
+    font-size: 13px;
+    color: var(--color-plate);
+}
+li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+li::before {
+    counter-increment: item;
+    content: "0" counter(item) ".";
+    margin-right: 5px;
+    color: var(--color-green);
+    font-size: 12px;
+    text-align: right;
+}
+li:hover, li:focus {
+    color: var(--color-green);
+}
+h1 {
+    color: #64ffda;
+    font-size: 16px;
+}
+h2 {
+    color: var(--color-light-slate);
+    font-size: 80px;
+    font-family: 'Oxygen', sans-serif;
+}
+h3 {
+    font-family: 'Oxygen', sans-serif;
+    color: var(--color-slate);
+    font-size: 80px;
+}
+p {
+    font-size: 20px;
+    color: var(--color-slate);
+}
+main {
+    margin: 0 300px 0 250px;
+}
